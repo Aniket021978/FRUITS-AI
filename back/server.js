@@ -8,15 +8,12 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-app.use("/",(req,res)=>{
-  res.json({message:"hello successfully deployed"});
-})
 app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:3000',
 }));
 
-mongoose.connect('mongodb://localhost:27017/Appreciate',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://aniket021978:aniket021978@cluster0.8zslwh8.mongodb.net/Appreciate',{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 

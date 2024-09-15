@@ -1,75 +1,89 @@
-/* Chat.module.css */
+.chatbot-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; 
+  background: linear-gradient(to right, #E0BCF3, #7EE7EE);
+}
 
-.gradientBackground {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #d9c0f3, #94ddef); 
-    min-height: 100vh; 
-    padding: 20px; 
-  }
-  
-  .chatService {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .fruitsList {
-    width: 100%;
-    max-height: 300px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
-    padding: 10px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .fruitItem {
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    background: #e9ecef;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .fruitItem:hover {
-    background: #d6d6d6;
-    color: #333;
-  }
-  
-  .fruitDetails {
-    margin-top: 20px;
-    padding: 15px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  .fruitDetails h3 {
-    margin-top: 0;
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .fruitDetails p {
-    font-size: 16px;
-    color: #555;
-  }
-  
+.chatbot-container {
+  margin: 130px 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9; /* Light gray for messages area */
+  border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.message-user {
+  background-color: #dcf8c6;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  max-width: 75%; /* Limit width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-bot {
+  background-color: #f1f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  max-width: 75%; /* Limit width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #ffffff; /* White background for input area */
+}
+
+.input-box {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px; /* Increase font size */
+  transition: border-color 0.3s; /* Smooth transition */
+}
+
+.input-box:focus {
+  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Change border color on focus */
+}
+
+.send-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.send-button:active {
+  background-color: #004494; /* Even darker on active */
+}
