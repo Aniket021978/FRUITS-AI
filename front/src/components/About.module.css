@@ -1,0 +1,124 @@
+.container {
+  border-radius: 20px;
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  height: 100vh; 
+  padding: 0; 
+  flex-direction: column;
+  justify-content: space-between; 
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid rgba(210, 231, 255, 0.5);
+  background: linear-gradient(to right, #E0BCF3, #7EE7EE);
+  align-items: center;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px; 
+}
+
+.fruitImage,
+.fruitImage2 {
+  object-fit: contain;
+  object-position: center;
+}
+
+.fruitImage {
+  aspect-ratio: 0.2;
+  width: 80px;
+}
+
+.fruitImage2 {
+  aspect-ratio: 0.69;
+  width: 55px;
+}
+
+.contentBox {
+  border-radius: 50px;
+  background-color: #fff;
+  display: flex;
+  width: 90%; 
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 35px 10px; 
+  font: 600 14px Dosis, sans-serif; 
+}
+
+.title {
+  color: #000;
+  font-size: 18px;
+}
+
+.description {
+  color: #8e9399;
+  margin-top: 11px;
+  text-align: center;
+}
+
+.ctaButton {
+  border-radius: 60px;
+  background-color: #000;
+  display: flex;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 180px;
+  align-items: center;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  justify-content: center;
+  padding: 8px 30px;
+}
+
+.buttonText {
+  padding: 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 320px) {
+  .container {
+    padding: 0;
+    justify-content: space-between; 
+  }
+
+  .imageWrapper {
+    margin-bottom: 15px; 
+  }
+  .fruitImage {
+    aspect-ratio: 0.25;
+  }
+  .contentBox {
+    padding: 25px 10px;
+    margin-top: 15px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .ctaButton {
+    max-width: 150px;
+    padding: 6px 20px;
+  }
+}

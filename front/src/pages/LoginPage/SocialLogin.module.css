@@ -1,0 +1,34 @@
+
+.socialLoginSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.socialLoginText {
+  color: #747070;
+  font: 400 25px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.socialIconsContainer {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  padding: 11px;
+}
+
+.socialButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.socialIcon {
+  width: 39px;
+  height: 39px;
+  object-fit: contain;
+}

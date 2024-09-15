@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #d9c0f3, #94ddef); 
+  padding: 20px; 
+  box-sizing: border-box;
+}
+
+.loginContainer {
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-width: 350px; 
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+.loginTitle {
+  color: #000;
+  text-align: center;
+  font: 200 30px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.termsText {
+  color: #6b5e5e;
+  text-align: center;
+  margin-top: 20px;
+  font: 200 16px Roboto, sans-serif;
+}
+
+.termsHighlight {
+  color: #0386d0;
+}
+
+.authNav {
+  display: flex;
+  margin-top: 10px;
+  width: 100px;
+  max-width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+  font: 200 18px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.authNavActive {
+  color: #036bb9;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.authNavInactive {
+  color: #a6a6a6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.decorativeImage {
+  aspect-ratio: 1.6;
+  object-fit: contain;
+  width: 120px;
+  border-radius: 40px;
+  align-self: flex-start;
+  max-width: 100%;
+  margin: 20px 0 10px 20px;
+}
+@media screen and (max-width: 600px) {
+  .loginContainer {
+    max-width: 100%; 
+    padding: 15px; 
+  }
+
+  .loginTitle {
+    font-size: 24px; 
+  }
+
+  .authNav {
+    width: 80px; 
+    gap: 5px; 
+    font-size: 16px; 
+  }
+
+  .termsText {
+    font-size: 14px; 
+  }
+
+  .inputField {
+    padding: 10px;
+    font-size: 16px; 
+  }
+
+  .decorativeImage {
+    width: 80px; 
+    margin: 15px 0 10px 10px; 
+  }
+  
+  .container {
+    padding: 10px; 
+  }
+}

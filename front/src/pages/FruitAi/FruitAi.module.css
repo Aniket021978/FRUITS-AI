@@ -1,0 +1,149 @@
+.container {
+  box-shadow: 20px 24px 84px rgba(44, 26, 83, 0.35);
+  display: flex;
+  width: 100%;
+  max-width: 96vw;
+  max-height: 100vh;
+  height: 100vh;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(to right, #E0BCF3, #7EE7EE); 
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  width: 57vw;
+  height: 90vh;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font: 600 3rem Dosis, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font: 800 1.5rem Dosis, sans-serif;
+  margin-bottom: 2.5rem;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.fruitImage {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.faqRectangle {
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0.5rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #3b5998;
+  white-space: nowrap;
+  text-align: center;
+  font: 800 2.25rem Dosis, sans-serif;
+}
+
+.logo {
+  width: 6rem;
+  height: auto;
+  margin-top: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .faqText {
+    font-size: 1.75rem;
+  }
+  .frame{
+    width: 30vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .faqText {
+    font-size: 1.5rem;
+  }
+  .frame{
+    width: 57vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .faqText {
+    font-size: 1.25rem;
+  }
+  .frame{
+    width: 65vw;
+  }
+}
