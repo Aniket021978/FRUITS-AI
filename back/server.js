@@ -8,7 +8,9 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-
+app.use("/",(req,res)=>{
+  res.json({message:"hello successfully deployed"});
+})
 app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:3000',
