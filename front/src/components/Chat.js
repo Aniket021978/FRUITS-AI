@@ -7,10 +7,9 @@ const Chat = () => {
 
   const handleSend = () => {
     if (input.trim()) {
-      // Add user message
+
       setMessages([...messages, { text: input, sender: 'user' }]);
 
-      // Simulate a chatbot response
       const response = getChatbotResponse(input);
       setMessages((prevMessages) => [...prevMessages, { text: response, sender: 'bot' }]);
       setInput('');

@@ -1,11 +1,13 @@
+/* Wrapper for centering the chatbot */
 .chatbot-wrapper {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
   height: 100vh; 
   background: linear-gradient(to right, #E0BCF3, #7EE7EE);
 }
 
+/* Container for the chatbot */
 .chatbot-container {
   margin: 130px 550px;
   display: flex;
@@ -17,16 +19,29 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.chatbot-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Area for displaying messages */
 .chatbot-messages {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
   background-color: #f9f9f9; /* Light gray for messages area */
   border-bottom: 1px solid #ccc; /* Separator line */
+  transition: background-color 0.3s ease;
 }
 
+.chatbot-messages:hover {
+  background-color: #f1f1f1; /* Slightly darker gray on hover */
+}
+
+/* User message styling */
 .message-user {
   background-color: #dcf8c6;
   padding: 10px;
@@ -35,39 +50,46 @@
   align-self: flex-end;
   max-width: 75%; /* Limit width */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
 }
 
+/* Bot message styling */
 .message-bot {
   background-color: #f1f0f0;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
   align-self: flex-start;
-  max-width: 75%; /* Limit width */
+  max-width: 75%; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
 }
 
+/* Input area styling */
 .chatbot-input {
   display: flex;
   padding: 10px;
   border-top: 1px solid #ccc;
-  background-color: #ffffff; /* White background for input area */
+  background-color: #ffffff; 
 }
 
+/* Input box styling */
 .input-box {
   flex-grow: 1;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px; /* Increase font size */
-  transition: border-color 0.3s; /* Smooth transition */
+  font-size: 16px; 
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-box:focus {
-  outline: none; /* Remove default outline */
-  border-color: #007bff; /* Change border color on focus */
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a focus glow */
 }
 
+/* Send button styling */
 .send-button {
   background-color: #007bff;
   color: #fff;
@@ -76,14 +98,28 @@
   margin-left: 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; /* Increase font size */
-  transition: background-color 0.3s; /* Smooth transition */
+  font-size: 16px; 
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .send-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; 
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .send-button:active {
-  background-color: #004494; /* Even darker on active */
+  background-color: #004494; 
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

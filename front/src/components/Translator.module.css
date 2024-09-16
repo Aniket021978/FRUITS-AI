@@ -1,3 +1,4 @@
+/* Container for centering the translator component */
 .container {
   display: flex;
   justify-content: center;
@@ -7,6 +8,7 @@
   padding: 20px;
 }
 
+/* Styling for the translator component */
 .translator {
   background: #fff;
   padding: 20px;
@@ -14,24 +16,45 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.translator:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
 .title {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #333;
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
+.title:hover {
+  color: #007bff;
+}
+
+/* Input field styling */
 .input {
-  width: 100%;
+  width: 96%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Select dropdown styling */
 .select {
   width: 100%;
   padding: 10px;
@@ -40,8 +63,16 @@
   border-radius: 4px;
   font-size: 16px;
   background: #f9f9f9;
+  transition: background 0.3s ease;
 }
 
+.select:focus {
+  background: #fff;
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styling */
 .button {
   width: 100%;
   padding: 10px;
@@ -51,18 +82,30 @@
   color: #fff;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .button:hover {
   background: #0056b3;
+  transform: scale(1.02);
 }
 
+.button:active {
+  background: #004494;
+  transform: scale(0.98);
+}
+
+/* Translated text area styling */
 .translatedText {
   margin-top: 20px;
-  padding: 15px;
-  background: #f1f1f1;
-  border-radius: 4px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
   color: #333;
-  font-size: 16px;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+  border: 1px solid gray;
+  height: 30px;
+  width: 50px;
+  text-align: center;
 }
