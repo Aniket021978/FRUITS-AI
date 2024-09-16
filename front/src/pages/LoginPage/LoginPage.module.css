@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 100vh; 
   background: linear-gradient(135deg, #d9c0f3, #94ddef); 
-  padding: 20px; 
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -13,19 +13,21 @@
   background-color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
-  max-width: 350px; 
+  max-width: 500px; 
   width: 100%;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 45px;
+  padding: 35px;
+  padding-top: 10px;
+  max-height: 664.8px;
 }
 
 .loginTitle {
   color: #000;
   text-align: center;
-  font: 200 30px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
-  margin-bottom: 10px;
+  font: 400 30px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 5px;
 }
 
 .termsText {
@@ -42,11 +44,12 @@
 .authNav {
   display: flex;
   margin-top: 10px;
+  margin-right: 50px;
   width: 100px;
   max-width: 100%;
   gap: 10px;
   justify-content: space-between;
-  font: 200 18px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
+  font: 200 25px "Sakkal Majalla", -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .authNavActive {
@@ -71,10 +74,9 @@
   aspect-ratio: 1.6;
   object-fit: contain;
   width: 120px;
-  border-radius: 40px;
   align-self: flex-start;
   max-width: 100%;
-  margin: 20px 0 10px 20px;
+  margin-top: -20px;
 }
 @media screen and (max-width: 600px) {
   .loginContainer {
