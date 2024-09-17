@@ -173,14 +173,14 @@ app.post('/api/forgot-password', async (req, res) => {
       host: "smtp.gmail.com",
       port: 465,
       auth: {
-        user: "aniket021978@gmail.com",
-        pass: "fqqclbomdkgllvgp",
+        user: "Your-email@gmail.com",
+        pass: "Your-Password",
       },
     });
 
     // Define email options
     const mailOptions = {
-      from: 'aniket021978@gmail.com',
+      from: 'Your-email@gmail.com',
       to: email,
       subject: 'Your OTP Code',
       text: `Your OTP code is ${otp}`,
