@@ -8,7 +8,7 @@ import Translator from './components/Translator';
 import FAQ from './pages/FAQSection/FAQSection';
 import About from './components/About';
 import './App.css'; 
-
+import ForgetPass from './pages/LoginPage/ForgotPassword';
 const App = () => {
   return (
     <Router>
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/translator" element={<Translator />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/about" element={<About />} />
+        <Route path="/forgot-password" element={<ForgetPass />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

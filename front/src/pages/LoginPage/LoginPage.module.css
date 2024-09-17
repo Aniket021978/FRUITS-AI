@@ -78,10 +78,10 @@
   max-width: 100%;
   margin-top: -20px;
 }
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .loginContainer {
     max-width: 100%; 
-    padding: 15px; 
+    padding: 20px; 
   }
 
   .loginTitle {
@@ -110,5 +110,10 @@
   
   .container {
     padding: 10px; 
+  }
+}
+@media (min-width: 601px){
+  .loginContainer { 
+    padding: 60px; 
   }
 }

@@ -70,7 +70,7 @@ function LoginForm() {
             Remember password
           </label>
         </div>
-        <a href="#forgot-password" className={styles.forgotPassword}>
+        <a href="#forgot-password" className={styles.forgotPassword} onClick={() => navigate("/forgot-password")}>
           Forget password
         </a>
         <button type="submit" className={styles.loginButton}>

@@ -47,16 +47,26 @@
 
 @media (max-width: 768px) {
   .registerForm {
-    padding: 10px;
+    padding: 0px;
   }
 
   .inputField {
     font-size: 16px;
-    padding: 10px;
+    padding: 5px;
   }
 
   .registerButton {
     padding: 12px;
     font-size: 20px;
+  }
+}
+@media (min-width: 768px){
+  .registerForm {
+    padding: 10px;
+  }
+}
+@media (min-width: 1024px){
+  .registerForm {
+    padding: 0px;
   }
 }

@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-require('dotenv').config(); 
+const nodemailer = require('nodemailer'); // For sending emails
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,7 +13,7 @@ app.use(cors({
   origin: 'http://localhost:3000',
 }));
 
-mongoose.connect('mongodb+srv://aniket021978:aniket021978@cluster0.8zslwh8.mongodb.net/Appreciate',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://aniket021978:aniket021978@cluster0.8zslwh8.mongodb.net/Appreciate', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
@@ -52,7 +52,7 @@ app.post('/api/login', async (req, res) => {
     if (!isMatch) {
       return res.status(401).json({ error: 'Invalid credentials. Please try again.' });
     }
-    const token = jwt.sign({ userId: user._id }, "Your_Secret_Key", { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, 'your-jwt-secret', { expiresIn: '1h' });
     res.status(200).json({ token });
   } catch (err) {
     console.error(err);
@@ -67,7 +67,7 @@ const faqSchema = new mongoose.Schema({
   answer: String,
 });
 
-const FAQ = mongoose.model("FAQ", faqSchema);
+const FAQ = mongoose.model('FAQ', faqSchema);
 
 app.get("/faqs", async (req, res) => {
   try {
@@ -135,6 +135,94 @@ app.get('/initialize', async (req, res) => {
     res.status(500).json({ message: 'Error initializing demo FAQ' });
   }
 });
+
+// Email checking route
+app.post('/api/check-email', async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      res.json({ exists: true });
+    } else {
+      res.json({ exists: false });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error checking email' });
+  }
+});
+let otpStore = {}; // Temporary store for OTP
+
+app.post('/api/forgot-password', async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ error: 'Email not registered' });
+    }
+
+    // Generate OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    // Store OTP in memory (or consider saving it in a database)
+    otpStore[email] = otp;
+
+    // Set up email transporter
+    const transporter = nodemailer.createTransport({
+      secure: true,
+      host: "smtp.gmail.com",
+      port: 465,
+      auth: {
+        user: "aniket021978@gmail.com",
+        pass: "fqqclbomdkgllvgp",
+      },
+    });
+
+    // Define email options
+    const mailOptions = {
+      from: 'aniket021978@gmail.com',
+      to: email,
+      subject: 'Your OTP Code',
+      text: `Your OTP code is ${otp}`,
+    };
+
+    // Send OTP via email
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ message: 'OTP sent to your email address' });
+  } catch (error) {
+    console.error('Error sending OTP:', error);
+    res.status(500).json({ message: 'Error sending OTP' });
+  }
+});
+
+app.post('/api/verify-otp', async (req, res) => {
+  const { email, otp } = req.body;
+  const storedOtp = otpStore[email];
+
+  if (!storedOtp) {
+    return res.status(400).json({ message: 'OTP expired or not found' });
+  }
+
+  if (storedOtp === otp) {
+    res.status(200).json({ message: 'OTP verified' });
+  } else {
+    res.status(400).json({ message: 'Invalid OTP' });
+  }
+});
+
+app.post('/api/update-password', async (req, res) => {
+  const { email, newPassword } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await User.findOneAndUpdate({ email }, { password: hashedPassword });
+    res.status(200).json({ message: 'Password updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error updating password' });
+  }
+});
+
 
 
 app.listen(port, () => {
